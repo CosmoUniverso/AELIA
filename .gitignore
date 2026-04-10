@@ -1,0 +1,60 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# === Virtual environments ===
+.venv/
+venv/
+env/
+ENV/
+
+# === Environment & secrets ===
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets/
+
+# === Docker ===
+docker-compose.override.yml
+
+# === Database dumps ===
+*.sql.gz
+*.dump
+pgdata/
+redis-data/
+
+# === Logs ===
+*.log
+logs/
+mosquitto/log/
+
+# === IDE ===
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# === AEGIS specific ===
+aegis/memory/data/
+aegis/world_model/snapshots/
+models/          # downloaded LLM weights
+faiss_index/     # vector index files

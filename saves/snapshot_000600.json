@@ -1,0 +1,52 @@
+{
+  "tick": 600,
+  "body": {
+    "mass": 54,
+    "mean_energy": 0.452,
+    "mean_health": 0.9414,
+    "compactness": 0.3375,
+    "center_of_mass": [
+      9.962962962962964,
+      20.40740740740741
+    ],
+    "cell_type_distribution": {
+      "stem": 0.037037037037037035,
+      "membrane": 0.9629629629629629,
+      "storage": 0.0
+    },
+    "total_resources_collected": 277.2262,
+    "total_damage_taken": 7.2989
+  },
+  "global_modulators": {
+    "growth_direction_x": -0.9530644888001927,
+    "growth_direction_y": -0.30276736975444957,
+    "growth_strength": 0.42,
+    "repair_bias": 0.48,
+    "prune_bias": 0.28,
+    "metabolic_thrift": 0.46,
+    "hazard_avoidance": 0.74,
+    "compactness_bias": 0.82,
+    "storage_bias": 0.38,
+    "membrane_bias": 0.46
+  },
+  "last_intent": {
+    "intent": "seek_energy_preserve_integrity",
+    "risk_tolerance": 0.26,
+    "growth_bias": [
+      -1.858015,
+      -0.5902499999999999
+    ],
+    "repair_priority": 0.48,
+    "exploration_weight": 0.18,
+    "metabolism_mode": "balanced",
+    "preferred_shape": "compact",
+    "storage_bias": 0.38,
+    "membrane_bias": 0.46,
+    "mass_hint": 54
+  },
+  "world_summary": {
+    "resource_cells": 111,
+    "mean_nutrient": 0.0294,
+    "mean_toxin": 0.0
+  }
+}
