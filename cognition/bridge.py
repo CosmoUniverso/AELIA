@@ -23,9 +23,12 @@ class BridgeController:
         gy = float(growth_bias[1])
 
         norm = math.sqrt(gx * gx + gy * gy)
-        if norm > 1e-6:
+        if norm > 0.15:
             gx /= norm
             gy /= norm
+        else:
+            gx = 0.0
+            gy = 0.0
 
         metabolism_mode = str(intent.get('metabolism_mode', 'balanced'))
         preferred_shape = str(intent.get('preferred_shape', 'stable'))

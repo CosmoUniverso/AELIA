@@ -18,23 +18,23 @@
     "total_damage_taken": 0.002
   },
   "global_modulators": {
-    "growth_direction_x": -0.9607778256449576,
-    "growth_direction_y": -0.2773192560009986,
-    "growth_strength": 0.42,
+    "growth_direction_x": 0.06488740924835347,
+    "growth_direction_y": -0.9978925914751731,
+    "growth_strength": 0.39226757301740356,
     "repair_bias": 0.48,
-    "prune_bias": 0.28,
-    "metabolic_thrift": 0.46,
+    "prune_bias": 0.2954053689014924,
+    "metabolic_thrift": 0.4427760379186473,
     "hazard_avoidance": 0.74,
-    "compactness_bias": 0.62,
-    "storage_bias": 0.5,
-    "membrane_bias": 0.68
+    "compactness_bias": 0.6488701454439733,
+    "storage_bias": 0.45653536380607784,
+    "membrane_bias": 0.696993766634139
   },
   "last_intent": {
     "intent": "seek_energy_preserve_integrity",
     "risk_tolerance": 0.26,
     "growth_bias": [
-      -1.647015,
-      -0.475395
+      0.07828000000000002,
+      -1.203855
     ],
     "repair_priority": 0.48,
     "exploration_weight": 0.18,

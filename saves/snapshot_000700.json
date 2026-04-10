@@ -1,40 +1,40 @@
 {
   "tick": 700,
   "body": {
-    "mass": 55,
-    "mean_energy": 0.4458,
-    "mean_health": 0.9446,
-    "compactness": 0.3438,
+    "mass": 58,
+    "mean_energy": 0.4196,
+    "mean_health": 0.9512,
+    "compactness": 0.3452,
     "center_of_mass": [
-      10.381818181818181,
-      19.563636363636363
+      27.551724137931036,
+      34.3448275862069
     ],
     "cell_type_distribution": {
-      "stem": 0.03636363636363636,
-      "membrane": 0.9636363636363636,
-      "storage": 0.0
+      "stem": 0.08620689655172414,
+      "membrane": 0.7068965517241379,
+      "storage": 0.20689655172413793
     },
-    "total_resources_collected": 313.4033,
-    "total_damage_taken": 8.4742
+    "total_resources_collected": 312.9882,
+    "total_damage_taken": 0.324
   },
   "global_modulators": {
-    "growth_direction_x": -0.6329522124802498,
-    "growth_direction_y": -0.7741908658182145,
-    "growth_strength": 0.42,
+    "growth_direction_x": 0.0,
+    "growth_direction_y": 0.0,
+    "growth_strength": 0.5114971159723876,
     "repair_bias": 0.48,
-    "prune_bias": 0.28,
-    "metabolic_thrift": 0.46,
+    "prune_bias": 0.3077980213840157,
+    "metabolic_thrift": 0.48268037485964455,
     "hazard_avoidance": 0.74,
-    "compactness_bias": 0.82,
-    "storage_bias": 0.38,
-    "membrane_bias": 0.46
+    "compactness_bias": 0.8908080974747239,
+    "storage_bias": 0.42675915493991085,
+    "membrane_bias": 0.5215713813086427
   },
   "last_intent": {
     "intent": "seek_energy_preserve_integrity",
     "risk_tolerance": 0.26,
     "growth_bias": [
-      -1.22946,
-      -1.5038049999999998
+      -0.24022500000000002,
+      0.17784500000000003
     ],
     "repair_priority": 0.48,
     "exploration_weight": 0.18,
@@ -42,11 +42,11 @@
     "preferred_shape": "compact",
     "storage_bias": 0.38,
     "membrane_bias": 0.46,
-    "mass_hint": 55
+    "mass_hint": 58
   },
   "world_summary": {
     "resource_cells": 111,
-    "mean_nutrient": 0.0292,
+    "mean_nutrient": 0.0271,
     "mean_toxin": 0.0
   }
 }

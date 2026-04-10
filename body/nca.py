@@ -18,6 +18,13 @@ class BodyNCA:
         self.total_resources_collected = 0.0
         self.total_damage_taken = 0.0
         self.cell_types_enum = CellType
+
+        # Metriche recenti per autoregolazione
+        self.created_cells_recent = 0
+        self.died_cells_recent = 0
+        self.prev_center_of_mass = None
+        self.prev_mean_energy = None
+
         self._spawn_seed(cfg.seed_x, cfg.seed_y)
 
     def _spawn_seed(self, x: int, y: int) -> None:
@@ -75,6 +82,15 @@ class BodyNCA:
     def compactness(self) -> float:
         return morphology.compactness(self)
 
+    def perimeter(self) -> int:
+        alive = {(x, y) for x, y, _ in self.iter_alive()}
+        perimeter = 0
+        for x, y in alive:
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                if (x + dx, y + dy) not in alive:
+                    perimeter += 1
+        return perimeter
+
     def summarize(self) -> Dict[str, object]:
         return {
             'mass': self.mass(),
@@ -89,6 +105,7 @@ class BodyNCA:
 
     def _share_energy(self) -> None:
         deltas = [[0.0 for _ in range(self.cfg.grid_w)] for _ in range(self.cfg.grid_h)]
+
         for x, y, cell in list(self.iter_alive()):
             neighbors = []
             for ny in range(max(0, y - 1), min(self.cfg.grid_h, y + 2)):
@@ -98,12 +115,14 @@ class BodyNCA:
                     other = self.grid[ny][nx]
                     if other.alive:
                         neighbors.append((nx, ny, other))
+
             for nx, ny, other in neighbors:
                 diff = cell.energy - other.energy
                 if diff > 0.04:
                     transfer = min(diff * self.cfg.energy_share_rate, cell.energy * 0.06)
                     deltas[y][x] -= transfer
                     deltas[ny][nx] += transfer
+
         for y in range(self.cfg.grid_h):
             for x in range(self.cfg.grid_w):
                 cell = self.grid[y][x]
@@ -111,10 +130,16 @@ class BodyNCA:
                     cell.energy = max(0.0, min(1.0, cell.energy + deltas[y][x]))
 
     def update(self, world, mods) -> None:
+        self.created_cells_recent = 0
+        self.died_cells_recent = 0
+
         alive_snapshot = [(x, y, cell) for x, y, cell in self.iter_alive()]
         current_mass = len(alive_snapshot)
 
         for x, y, cell in alive_snapshot:
+            if not cell.alive:
+                continue
+
             cell.age += 1
 
             gain = metabolism.resource_gain(self.cfg, x, y, cell, world)
@@ -132,11 +157,16 @@ class BodyNCA:
             growth.try_grow(self, x, y, cell, world, mods)
 
             if cell.energy <= 0.0 or cell.health <= 0.0:
+                if cell.alive:
+                    self.died_cells_recent += 1
                 cell.alive = False
                 cell.energy = 0.0
                 cell.health = 0.0
             else:
+                before_alive = cell.alive
                 growth.prune_if_needed(self, x, y, cell, mods.prune_bias)
+                if before_alive and not cell.alive:
+                    self.died_cells_recent += 1
 
         self.enforce_minimum_stem_core()
         self._share_energy()
@@ -160,7 +190,7 @@ class BodyNCA:
             return
 
         needed = 5 - len(stem_positions)
-        candidates.sort(key=lambda item: item[0])  # preferisci vicino al centro
+        candidates.sort(key=lambda item: item[0])
 
         converted = 0
         for _, _, _, cell in candidates:

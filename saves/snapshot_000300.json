@@ -1,40 +1,40 @@
 {
   "tick": 300,
   "body": {
-    "mass": 57,
-    "mean_energy": 0.4168,
-    "mean_health": 0.9401,
-    "compactness": 0.3519,
+    "mass": 67,
+    "mean_energy": 0.4048,
+    "mean_health": 0.9501,
+    "compactness": 0.3602,
     "center_of_mass": [
-      10.666666666666666,
-      19.63157894736842
+      30.313432835820894,
+      33.28358208955224
     ],
     "cell_type_distribution": {
-      "stem": 0.07017543859649122,
-      "membrane": 0.9298245614035088,
-      "storage": 0.0
+      "stem": 0.07462686567164178,
+      "membrane": 0.7014925373134329,
+      "storage": 0.22388059701492538
     },
-    "total_resources_collected": 168.7649,
-    "total_damage_taken": 3.2669
+    "total_resources_collected": 195.5523,
+    "total_damage_taken": 0.3266
   },
   "global_modulators": {
-    "growth_direction_x": -0.757473750210305,
-    "growth_direction_y": -0.6528656199726987,
-    "growth_strength": 0.42,
+    "growth_direction_x": -0.6011993236511413,
+    "growth_direction_y": -0.799099101014017,
+    "growth_strength": 0.39359467583320407,
     "repair_bias": 0.48,
-    "prune_bias": 0.28,
-    "metabolic_thrift": 0.46,
+    "prune_bias": 0.2762039994216013,
+    "metabolic_thrift": 0.47621356549274796,
     "hazard_avoidance": 0.74,
-    "compactness_bias": 0.82,
-    "storage_bias": 0.38,
-    "membrane_bias": 0.46
+    "compactness_bias": 0.8888120088287359,
+    "storage_bias": 0.49733345389464145,
+    "membrane_bias": 0.4541495527372702
   },
   "last_intent": {
     "intent": "seek_energy_preserve_integrity",
     "risk_tolerance": 0.26,
     "growth_bias": [
-      -1.474135,
-      -1.2705549999999999
+      -1.705155,
+      -0.8809849999999999
     ],
     "repair_priority": 0.48,
     "exploration_weight": 0.18,
@@ -42,11 +42,11 @@
     "preferred_shape": "compact",
     "storage_bias": 0.38,
     "membrane_bias": 0.46,
-    "mass_hint": 57
+    "mass_hint": 67
   },
   "world_summary": {
     "resource_cells": 111,
-    "mean_nutrient": 0.0326,
+    "mean_nutrient": 0.028,
     "mean_toxin": 0.0001
   }
 }

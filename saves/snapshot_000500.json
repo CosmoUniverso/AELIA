@@ -1,52 +1,52 @@
 {
   "tick": 500,
   "body": {
-    "mass": 54,
-    "mean_energy": 0.4694,
-    "mean_health": 0.9376,
-    "compactness": 0.3333,
+    "mass": 58,
+    "mean_energy": 0.3541,
+    "mean_health": 0.9512,
+    "compactness": 0.3452,
     "center_of_mass": [
-      10.277777777777779,
-      19.90740740740741
+      27.551724137931036,
+      34.3448275862069
     ],
     "cell_type_distribution": {
-      "stem": 0.037037037037037035,
-      "membrane": 0.9629629629629629,
-      "storage": 0.0
+      "stem": 0.08620689655172414,
+      "membrane": 0.7068965517241379,
+      "storage": 0.20689655172413793
     },
-    "total_resources_collected": 240.993,
-    "total_damage_taken": 6.1237
+    "total_resources_collected": 241.9973,
+    "total_damage_taken": 0.324
   },
   "global_modulators": {
-    "growth_direction_x": -0.36665997259220645,
-    "growth_direction_y": -0.9303550206768825,
-    "growth_strength": 0.42,
+    "growth_direction_x": 0.0,
+    "growth_direction_y": 0.0,
+    "growth_strength": 0.3415624788805165,
     "repair_bias": 0.48,
-    "prune_bias": 0.28,
-    "metabolic_thrift": 0.46,
+    "prune_bias": 0.30641146902807814,
+    "metabolic_thrift": 0.4385115054565014,
     "hazard_avoidance": 0.74,
-    "compactness_bias": 0.82,
-    "storage_bias": 0.38,
-    "membrane_bias": 0.46
+    "compactness_bias": 0.9711777477036925,
+    "storage_bias": 0.5769479285453126,
+    "membrane_bias": 0.43561759199356176
   },
   "last_intent": {
     "intent": "seek_energy_preserve_integrity",
     "risk_tolerance": 0.26,
     "growth_bias": [
-      -0.7132499999999999,
-      -1.809785
+      0.11883499999999991,
+      -0.47092999999999996
     ],
     "repair_priority": 0.48,
     "exploration_weight": 0.18,
     "metabolism_mode": "balanced",
     "preferred_shape": "compact",
-    "storage_bias": 0.38,
+    "storage_bias": 0.5,
     "membrane_bias": 0.46,
-    "mass_hint": 54
+    "mass_hint": 58
   },
   "world_summary": {
     "resource_cells": 111,
-    "mean_nutrient": 0.03,
+    "mean_nutrient": 0.0277,
     "mean_toxin": 0.0
   }
 }
